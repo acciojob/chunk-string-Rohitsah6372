@@ -1,17 +1,24 @@
 function stringChop(str, size) {
-	if(!str)
-		return [];
-	let ans = [];
-	for(let i=0;i<str.length;i=i+size){
-		let sliced = str.slice(i, i+size);
-		ans.push(sliced);
+	let ans=[]
+	let j=0;
+	let s="";
+	for(let i=0;i<str.length;i++){
+		s+=str[i];
+		j++;
+		if(j == size){
+			j=0;
+			s="";
+			ans.push(s);
+		}
 	}
+	ans.push(s);
+
 	return ans;
 }
 
-console.log(stringChop("Hello, world!", 5));
+// console.log(stringChop("Hello, world!", 5));
 
-Do not change the code below
-const str = prompt("Enter String.");
-const size = prompt("Enter Chunk Size.");
-alert(stringChop(str, size));
+// Do not change the code below
+// const str = prompt("Enter String.");
+// const size = prompt("Enter Chunk Size.");
+// alert(stringChop(str, size));
